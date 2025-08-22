@@ -2,6 +2,8 @@
   "name": "namaste-react",
   "version": "1.0.0",
   "scripts": {
+    "start": "parcel index.html --cache-dir .parcel-cache",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "author": "Ankit Sharma",
