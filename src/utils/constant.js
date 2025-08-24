@@ -1,4 +1,10 @@
-export const restaurantList = [
+export const IMG_CDN_URL =
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+
+export const LOGO =
+  "https://marketplace.canva.com/EAFaFUz4aKo/3/0/1600w/canva-yellow-abstract-cooking-fire-free-logo-tn1zF-_cG9c.jpg";
+
+export const restaurantData = [
   {
     type: "restaurant",
     data: {
