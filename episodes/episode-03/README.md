@@ -26,7 +26,7 @@ Common values:
 
     🚀 Use type="module" for modern, modular JavaScript. 
      
-🔤 {TitleComponent} vs ({<TitleComponent/>}) vs ({<TitleComponent></TitleComponent>})
+🔤 {TitleComponent} vs `{<TitleComponent/>}` vs `{<TitleComponent></TitleComponent>}`
 
     {TitleComponent} → Renders a variable or React element (not a component).
     {<TitleComponent />} → Calls and renders a React component (self-closing).
@@ -92,7 +92,7 @@ Two types:
 
 A JavaScript function that returns JSX. 
 jsx 
-1 const MyComponent = () => <h1>Namaste React!</h1>;
+`const MyComponent = () => <h1>Namaste React!</h1>;`
  
 ✅ Always capitalize component names.
 myComponent ❌ → MyComponent ✅ 
@@ -101,10 +101,10 @@ myComponent ❌ → MyComponent ✅
 
 Use curly braces {}. 
 jsx
-1 const number = 10000;
-2 const Heading = () => (
-3  <div>{number}</div>
-4 );
+```const number = 10000;
+const Heading = () => (
+<div>{number}</div>
+);```
  
  
 
@@ -114,8 +114,8 @@ jsx
 
 Just wrap it in {}. 
 jsx
-1 const Title = <h1>Hello</h1>;
-2 const App = () => <div>{Title}</div>;
+```const Title = <h1>Hello</h1>;
+const App = () => <div>{Title}</div>;```
  
  
 
