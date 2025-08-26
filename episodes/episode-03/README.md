@@ -26,7 +26,7 @@ Common values:
 
     🚀 Use type="module" for modern, modular JavaScript. 
      
-🔤 {TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} 
+🔤 {TitleComponent} vs ({<TitleComponent/>}) vs ({<TitleComponent></TitleComponent>})
 
     {TitleComponent} → Renders a variable or React element (not a component).
     {<TitleComponent />} → Calls and renders a React component (self-closing).
@@ -91,30 +91,35 @@ Two types:
 📦 What is a React Functional Component? 
 
 A JavaScript function that returns JSX. 
-jsx
+jsx 
+1 const MyComponent = () => <h1>Namaste React!</h1>;
  
-<!-- const MyComponent = () => <h1>Namaste React!</h1>; -->
+✅ Always capitalize component names.
+myComponent ❌ → MyComponent ✅ 
  
-    ✅ Always capitalize component names.
-    myComponent ❌ → MyComponent ✅ 
-     
 🧮 How to use JavaScript code inside JSX? 
 
 Use curly braces {}. 
 jsx
-<!-- const number = 10000;
-const Heading = () => (
-  <div>{number}</div>
-); -->
+1 const number = 10000;
+2 const Heading = () => (
+3  <div>{number}</div>
+4 );
  
-    💡 Works with variables, expressions, functions — but not statements (like if). 
-     
+ 
+
+💡 Works with variables, expressions, functions — but not statements like if, for, etc. 
+ 
 🔁 How to call a React Element in JSX? 
 
 Just wrap it in {}. 
 jsx
-<!-- const Title = <h1>Hello</h1>;
-const App = () => <div>{Title}</div>; -->
+1 const Title = <h1>Hello</h1>;
+2 const App = () => <div>{Title}</div>;
+ 
+ 
+
+Simple as that — plug and play your elements! 🧩 
  
     🔄 Like inserting a variable — clean and simple. 
      
