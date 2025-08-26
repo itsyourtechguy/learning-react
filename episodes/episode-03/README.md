@@ -93,7 +93,7 @@ Two types:
 A JavaScript function that returns JSX. 
 jsx
  
-const MyComponent = () => <h1>Namaste React!</h1>;
+<!-- const MyComponent = () => <h1>Namaste React!</h1>; -->
  
     ✅ Always capitalize component names.
     myComponent ❌ → MyComponent ✅ 
@@ -102,10 +102,10 @@ const MyComponent = () => <h1>Namaste React!</h1>;
 
 Use curly braces {}. 
 jsx
-const number = 10000;
+<!-- const number = 10000;
 const Heading = () => (
   <div>{number}</div>
-);
+); -->
  
     💡 Works with variables, expressions, functions — but not statements (like if). 
      
@@ -113,8 +113,8 @@ const Heading = () => (
 
 Just wrap it in {}. 
 jsx
-const Title = <h1>Hello</h1>;
-const App = () => <div>{Title}</div>;
+<!-- const Title = <h1>Hello</h1>;
+const App = () => <div>{Title}</div>; -->
  
     🔄 Like inserting a variable — clean and simple. 
      
