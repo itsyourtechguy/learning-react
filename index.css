@@ -19,6 +19,15 @@
     gap: 20px;
 }
 
+.auth-btn {
+    padding: 5px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .restaurant-list {
     display: flex;
     flex-wrap: wrap;
@@ -56,4 +65,20 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.shimmer-card {
+    width: 300px;
+    height: 350px;
+    margin: 10px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 37%, #f0f0f0 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.4s ease infinite;
 }
