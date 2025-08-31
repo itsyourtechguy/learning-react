@@ -4,7 +4,7 @@ No. JSX is syntactic sugar for React.createElement(). You can write React withou
 Is ES6 mandatory for React? 
 No, but it’s standard. React works with ES5, but modern React uses ES6+ features like classes, destructuring, and modules. 
  
-{TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} 
+{TitleComponent} vs `{<TitleComponent/>}` vs `{<TitleComponent></TitleComponent>}` 
 
     {TitleComponent} → renders a variable or component function (if it returns JSX)  
     {<TitleComponent/>} → renders a React component (self-closing)  
@@ -16,7 +16,7 @@ How can I write comments in JSX?
 {/* This is a comment */}
 ⚠️ Must wrap in {} and use /* */. 
  
-What is <React.Fragment></React.Fragment> and <>? 
+What is `<React.Fragment></React.Fragment>` and `<>`? 
 A lightweight wrapper to return multiple elements without a div.   
 
     <React.Fragment> → named version  
@@ -47,7 +47,7 @@ What is props in React? Ways to pass?
 
 props = inputs to components (like function arguments).
 Pass via:   
-<User name="John" age={25} isActive={true} />
+`<User name="John" age={25} isActive={true} />`
 
 Receive in component as props.name, props.age, etc.
 Or destructure: ({ name, age }) => ... 
