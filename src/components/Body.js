@@ -1,6 +1,8 @@
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import RestaurantCard from "../utils/RestaurantCard";
 import Shimmer from "./Shimmer";
+import { FETCH_RESTAURANTS_URL } from "../utils/constant";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     const [restaurantList, setRestaurantList] = useState([]);
@@ -21,12 +23,12 @@ const Body = () => {
       fetchData();
     }, []);
 
-    const API = "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.7169967&lng=75.86830739999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
     const fetchData = async () => {
-      const response = await fetch(API);
+      const response = await fetch(FETCH_RESTAURANTS_URL);
       const data = await response.json();
-      setRestaurantList(data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-      setFilteredRestaurant(data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      const restaurants = data?.data?.cards[3].card?.card?.gridElements?.infoWithStyle?.restaurants;
+      setRestaurantList(restaurants);
+      setFilteredRestaurant(restaurants);
     }
 
     if (restaurantList.length === 0) {
@@ -42,7 +44,7 @@ const Body = () => {
       <button onClick={handleClick}>Top Rated Resturants</button>
       <div className="restaurant-list">
         {filteredRestaurant.map((restaurant) => (
-          <RestaurantCard key={restaurant?.info?.id} resData={restaurant?.info} />
+          <Link key={restaurant?.info?.id} to={"/restaurants/" + restaurant?.info?.id}><RestaurantCard resData={restaurant?.info} /></Link>
         ))}
       </div>
     </div>

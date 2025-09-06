@@ -1,3 +1,8 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -81,4 +86,25 @@
     background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 37%, #f0f0f0 63%);
     background-size: 400% 100%;
     animation: shimmer 1.4s ease infinite;
+}
+
+/* Dish Card */
+.dish-card {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    max-width: 700px;
+}
+
+.dish-details {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.dish-image {
+    width: 30%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
 }

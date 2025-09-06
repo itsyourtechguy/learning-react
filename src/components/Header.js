@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { LOGO } from "./../utils/constant";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 const [authBtn, setAuthBtn] = useState("Login");
@@ -14,9 +15,9 @@ const handleAuth = () => {
         <img src={LOGO} alt="logo" />
       </div>
       <ul className="nav-links">
-        <li>Home</li>
-        <li>About US</li>
-        <li>Contact US</li>
+        <Link to="/"><li>Home</li></Link>
+        <Link to="/about"><li>About US</li></Link>
+        <Link to="/contact"><li>Contact US</li></Link>
         <li>Cart</li>
         <li><button className="auth-btn" onClick={handleAuth}>{authBtn}</button></li>
       </ul>
