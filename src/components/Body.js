@@ -3,11 +3,13 @@ import RestaurantCard from "../utils/RestaurantCard";
 import Shimmer from "./Shimmer";
 import { FETCH_RESTAURANTS_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     const [restaurantList, setRestaurantList] = useState([]);
     const [filteredRestaurant, setFilteredRestaurant] = useState([]);
     const [searchText, setSearchText] = useState("");
+    const isOnline = useOnlineStatus();
 
     const handleClick = () => {
         const filteredList = restaurantList.filter((res) => res.info.avgRating >= 4.5);
@@ -26,9 +28,18 @@ const Body = () => {
     const fetchData = async () => {
       const response = await fetch(FETCH_RESTAURANTS_URL);
       const data = await response.json();
-      const restaurants = data?.data?.cards[3].card?.card?.gridElements?.infoWithStyle?.restaurants;
+      const restaurants = data?.data?.cards[4].card?.card?.gridElements?.infoWithStyle?.restaurants;
       setRestaurantList(restaurants);
       setFilteredRestaurant(restaurants);
+    }
+
+    if (!isOnline) {
+      return (
+        <div className="offline-status">
+          <h1>You are offline</h1>
+          <h2>Please check your internet connection.</h2>
+        </div>
+      )
     }
 
     if (restaurantList.length === 0) {

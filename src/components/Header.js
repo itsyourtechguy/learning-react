@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { LOGO } from "./../utils/constant";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
 const [authBtn, setAuthBtn] = useState("Login");
+const isOnline = useOnlineStatus();
 
 const handleAuth = () => {
   authBtn === "Login" ? setAuthBtn("Logout") : setAuthBtn("Login");
@@ -15,6 +17,7 @@ const handleAuth = () => {
         <img src={LOGO} alt="logo" />
       </div>
       <ul className="nav-links">
+        <li className={isOnline ? "online" : "offline"}>Status: {isOnline ? "🟢" : "🔴"}</li>
         <Link to="/"><li>Home</li></Link>
         <Link to="/about"><li>About US</li></Link>
         <Link to="/contact"><li>Contact US</li></Link>
